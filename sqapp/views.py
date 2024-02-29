@@ -8,7 +8,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 from .forms import EditProfileForm
 # Create your views here.
 def index(request):
-    users = UserProfile.objects.all().order_by('-score')[:3]
+    users = UserProfile.objects.all().order_by('-score')[:5]
     return render(request, 'index.html', {'users' : users})
 
 def done(request):
