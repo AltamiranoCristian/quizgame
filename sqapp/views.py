@@ -74,17 +74,20 @@ def answer_process(request):
                 question_id = int(question.split('_')[1])
                 selected_answer_id = int(answers)
                 respuesta_seleccionada = Answer.objects.get(id=selected_answer_id)
-                # Guardar la respuesta seleccionada por el usuario o realizar cualquier otra acción necesaria
-                user_answer = UserAnswer.objects.create(
-                    user=user,
-                    question_id=question_id,
-                    answer_id=selected_answer_id
-                )
-                if respuesta_seleccionada.is_correct:
-                    # Si la respuesta es correcta, incrementar el puntaje del usuario
-                    user_profile = UserProfile.objects.get(user=user)
-                    user_profile.score += 1
-                    user_profile.save()
+                
+                # Verificar si el usuario ya ha respondido a esta pregunta
+                if not UserAnswer.objects.filter(user=user, question_id=question_id).exists():
+                    # Guardar la respuesta seleccionada por el usuario o realizar cualquier otra acción necesaria
+                    user_answer = UserAnswer.objects.create(
+                        user=user,
+                        question_id=question_id,
+                        answer_id=selected_answer_id
+                    )
+                    if respuesta_seleccionada.is_correct:
+                        # Si la respuesta es correcta, incrementar el puntaje del usuario
+                        user_profile = UserProfile.objects.get(user=user)
+                        user_profile.score += 1
+                        user_profile.save()
     else:
         return redirect('show_quiz')
     return redirect('done')
