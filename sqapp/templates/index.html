@@ -1,0 +1,36 @@
+{% extends "core.html" %}
+{% load static %}
+{% block content %}
+{% include "banner.html" %}
+<div class="mx-auto max-w-md px-4 py-12 sm:py-24 md:max-w-4xl">
+    <h1 class="text-4xl my-5">Rank</h1>
+    <ul class="divide-y divide-gray-100">
+        {% for user in users %}
+        <li class="transition easy-in duration-300 flex justify-between gap-x-6 p-5 hover:bg-corduroy-200 rounded-md">
+            <div class="flex min-w-0 gap-x-4">
+                <img class="h-14 w-14 flex-none rounded-full bg-gray-50" id="randomImage" src="" alt="profilepic" data-random-id="{{ item.random_id }}">
+                <div class="min-w-0 flex-auto">
+                    <p class="text-md font-semibold leading-6 text-gray-900">{{user.user}}</p>
+                    <p class="mt-1 truncate text-sm leading-5 text-gray-500">Score: {{user.score}}</p>
+                </div>
+            </div>
+            <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                <p class="leading-6 text-gray-900"><i class="bi bi-trophy-fill text-md">{{ forloop.counter }}</i></p>
+                <p class="mt-1 text-sm leading-5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">{{user.user.last_login}}</time></p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<script>
+    function generateRandomId() {
+        return Math.floor(Math.random() * 1000) + 1;
+    }
+    const randomImages = document.querySelectorAll('#randomImage');
+    randomImages.forEach(function(imgElement) {
+        const randomId = generateRandomId();
+        const imageUrl = `https://picsum.photos/200/?image=${randomId}`;
+        imgElement.src = imageUrl;
+    });
+</script>
+{% endblock content %}
