@@ -1,27 +1,27 @@
 {% extends "core.html" %}
 {% block content %}
 <div class="mx-auto w-96 px-4 py-12 sm:px-6 sm:py-26 lg:max-w-7xl lg:px-8">
-        <h1 class="m-8 text-2xl text-center">Sign up</h1>
+        <h1 class="m-8 text-2xl text-center">Registro</h1>
         <form method="post">
             {% csrf_token %}
             <div class="my-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">User</label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">Usuario</label>
                 <input type="text" name="username" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-corduroy-600 sm:text-sm sm:leading-6" placeholder="User" required>
             </div>
             <div class="my-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">Contraseña</label>
                 <input type="password" name="password1" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-corduroy-600 sm:text-sm sm:leading-6" placeholder="Password" required>
             </div>
             <div class="my-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Repeat Password</label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">Repetir Contraseña</label>
                 <input type="password" name="password2" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-corduroy-600 sm:text-sm sm:leading-6" id="floatingInput" placeholder="Password" required>
                 
             </div>
             {% comment %} {{formulario}} {% endcomment %}
-            <input class="flex w-full justify-center rounded-md bg-corduroy-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-corduroy-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corduroy-600" type="submit" value="Submit">
+            <input class="flex w-full justify-center rounded-md bg-corduroy-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-corduroy-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corduroy-600" type="submit" value="Enviar">
         </form>
-        <span class="flex w-full justify-center mt-4">Already are you a member?
-            <a class="text-blue-chill-400" href='/login'>Log in here!</a>
+        <span class="flex w-full justify-center mt-4">¿Ya eres miembro?
+            <a class="text-blue-chill-400" href='/login'>inicia sesión aquí!</a>
         </span>
 </div>
 <div class="fixed bottom-10 right-10 animate-pulse text-2xl">
