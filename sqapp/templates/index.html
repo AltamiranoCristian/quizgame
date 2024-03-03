@@ -11,12 +11,12 @@
                 <img class="h-14 w-14 flex-none rounded-full bg-gray-50" id="randomImage" src="" alt="profilepic" data-random-id="{{ item.random_id }}">
                 <div class="min-w-0 flex-auto">
                     <p class="text-md font-semibold leading-6 text-gray-900">{{user.user}}</p>
-                    <p class="mt-1 truncate text-sm leading-5 text-gray-500">Score: {{user.score}}</p>
+                    <p class="mt-1 truncate text-sm leading-5 text-gray-500">Puntaje: {{user.score}}</p>
                 </div>
             </div>
             <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
                 <p class="leading-6 text-gray-900"><i class="bi bi-trophy-fill text-md">{{ forloop.counter }}</i></p>
-                <p class="mt-1 text-sm leading-5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">{{user.user.last_login}}</time></p>
+                <p class="mt-1 text-sm leading-5 text-gray-500">Ultima sesión: <time datetime="2023-01-23T13:23Z">{{user.user.last_login}}</time></p>
             </div>
         </li>
         {% endfor %}
