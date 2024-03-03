@@ -1,23 +1,23 @@
 {% extends "core.html" %}
 {% block content %}
 <div class="mx-auto w-96 px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-    <h1 class="m-8 text-2xl text-center">Log in</h1>
+    <h1 class="m-8 text-2xl text-center">Iniciar Sesión</h1>
     <div>
         <form method="post">
             {% csrf_token %}
             <div class="my-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">User</label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">Usuario</label>
                 <input type="text" name="username" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-corduroy-600 sm:text-sm sm:leading-6" placeholder="User" />
             </div>
             <div class="my-4">
-                <label class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                <label class="block text-sm font-medium leading-6 text-gray-900">Contraseña</label>
                 <input type="password" class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-corduroy-600 sm:text-sm sm:leading-6" placeholder="Password" name="password"/>
             </div>
             {% comment %} {{form}} {% endcomment %}
-            <input class="flex w-full justify-center rounded-md bg-corduroy-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-corduroy-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corduroy-600" type="submit" value="Submit"/>
+            <input class="flex w-full justify-center rounded-md bg-corduroy-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-corduroy-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-corduroy-600" type="submit" value="Enviar"/>
         </form>
-        <span class="flex w-full justify-center mt-4">Not a member?
-            <a class="text-blue-chill-400" href='/signup'>sign up here!</a>
+        <span class="flex w-full justify-center mt-4">¿Aún no eres miembro?
+            <a class="text-blue-chill-400" href='/signup'>¡únete aquí!</a>
         </span>
     </div>
 </div>
