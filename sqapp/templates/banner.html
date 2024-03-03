@@ -3,15 +3,15 @@
     <div class="w-full absolute inset-0 bg-black opacity-50"></div>
     <div class="w-full absolute inset-0 flex items-center justify-center">
         <div class="text-white text-center">
-            <h1 class="text-xl font-bold mb-4 sm:text-3xl md:text-4xl lg:text-5xl">Test your knowledge in this sidequest!</h1>
+            <h1 class="text-xl font-bold mb-4 sm:text-3xl md:text-4xl lg:text-5xl">¡Prueba tus conocimientos en este sidequest!</h1>
             <p class="text-sm sm:text-lg md:text-xl lg:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             {% if user.is_authenticated %}
             <a href="/home">
-                <button class="transition ease-in w-32 h-10 m-4 bg-corduroy-950 text-corduroy-100 rounded-full hover:text-blue-chill-500 hover:bg-corduroy-100" >get started</button>
+                <button class="transition ease-in w-32 h-10 m-4 bg-corduroy-950 text-corduroy-100 rounded-full hover:text-blue-chill-500 hover:bg-corduroy-100" >Empezar</button>
             </a>
             {% else %}
             <a href="/signup">
-                <button class="transition ease-in w-32 h-10 m-4 bg-corduroy-950 text-corduroy-100 rounded-full hover:text-blue-chill-500 hover:bg-corduroy-100" >Sign up</button>
+                <button class="transition ease-in w-32 h-10 m-4 bg-corduroy-950 text-corduroy-100 rounded-full hover:text-blue-chill-500 hover:bg-corduroy-100" >Registrarse</button>
             </a>
             {% endif %}
             <span class="hidden md:block text-xl animate-ping">▼</span>
